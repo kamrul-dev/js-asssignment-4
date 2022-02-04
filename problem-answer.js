@@ -32,3 +32,29 @@ function pandaCost(singaraQuantity, samuchaQuantity, jilapiQuantity){
 }
 console.log(pandaCost(10, 0, 0));
 
+// Problem : 3 >> picnicBudget
+function picnicBudget(numberOfPeople){
+    if(typeof numberOfPeople != "number"){
+        console.log("Please enter a valid number as a number of people!");
+    }
+    let budget;
+    // for this condition each people price 5000tk
+    if(numberOfPeople <= 100){
+        budget = numberOfPeople * 5000;
+    }
+    // for this condition each people price 4000tk
+    else if(numberOfPeople > 100 && numberOfPeople <= 200){
+        let firstBudget = 100 * 5000;
+        let secondBudget = (numberOfPeople - 100) * 4000;
+        budget = firstBudget + secondBudget;
+    }
+    // for this condition each people price 3000tk
+    else if(numberOfPeople > 200){
+        let firstBudget = 100 * 5000;
+        let secondBudget = (200 - 100) * 4000;
+        let thirdBudget = (numberOfPeople - 200) * 3000;
+        budget = firstBudget + secondBudget + thirdBudget;
+    }
+    return budget;
+}
+console.log(picnicBudget(201));
